@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : ObjectPoll
@@ -9,8 +7,7 @@ public class Spawner : ObjectPoll
     [SerializeField] private float _secondsBetweenSpawn;
 
     private float _elapseTime = 0;
-
-    private void Start()
+        private void Start()
     {
         Initialize(_enemyPrefab);
     }
@@ -27,16 +24,13 @@ public class Spawner : ObjectPoll
                 int spawnPointNumber = Random.Range(0, _spawnPoints.Length);
 
                 SetEnemy(enemy, _spawnPoints[spawnPointNumber].position);
-            }
-            
-            
+            }          
         }
     }
     private void SetEnemy(GameObject enemy, Vector3 spawnPoint)
     {
         enemy.SetActive(true);
         enemy.transform.position = spawnPoint;
-
 
     }
 }
